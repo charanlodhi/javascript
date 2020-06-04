@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>AT&T FlipBook Demo</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery.min.1.12.2.js" type="text/javascript"></script>
+	<script src="jquery-ui.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div id="mainContainer" class="container">
+		<div class="pageLeft">
+			<h2>Left Side Page</h2>
+		</div>
+		<div class="pageRight">
+			<h2>Right Side Page</h2>
+		</div>
+	</div>
+	<script>
+		var bookratio = 1.67;
+		var widthratio = 1.366;
+		window.addEventListener('resize', function (e) {
+			el = document.getElementById('mainContainer')
+			 var size = resize(el);
+			// el.style.width = size.width;
+			//el.style.height = size.height;
+		});
+		function resize(el) {
+			// reset the width and height to the css defaults
+			var width = $(window).width(),
+			 height = $(window).height(),
+			 newbookWidth = width/widthratio,
+			 newbookHeight =  Math.round(newbookWidth / bookratio),
+			 padded = Math.max( window.innerHeight, document.body.clientHeight ) - 50;
+           
+			console.log(width+"ddd"+height);
+			console.log(newbookWidth+"asss"+newbookHeight)
+			el.style.width = '';
+			el.style.height = '';
+			if (newbookHeight > padded) {
+				newbookHeight = padded;
+				newbookWidth = Math.round(height * bookratio);
+			}
+
+			// set the width and height matching the aspect ratio
+			el.style.width = newbookWidth + 'px';
+			el.style.height = newbookHeight + 'px';
+
+			// return {
+			// 	width: width,
+			// 	height: height
+			// };
+		}
+	</script>
+</body>
+
+</html>

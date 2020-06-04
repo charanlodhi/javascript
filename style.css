@@ -1,0 +1,19 @@
+body{margin: 0px; padding: 0px; background: #0f54af; font-family: arial;}
+h2{
+
+}
+.container{ 
+	border: 1px solid #000; width: 1000px; height: 600px;
+	position: absolute; left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+	display:flex;
+	box-shadow: 0 0px 20px rgb(0, 0, 0, 0.3);
+
+}
+.pageLeft, .pageRight{
+	width: 50%;background: #fff;  height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pageLeft{ border-right: solid 2px gray; }
